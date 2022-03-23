@@ -6,6 +6,10 @@ This project is a simple Crud operation performed on a user.The project was boot
 
 In the project directory, you can run:
 
+### `npm install`
+
+Run this at first to download all the dependancies required for the application.
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -16,4 +20,4 @@ You may also see any lint errors in the console.
 
 ### `npm start`
 
-Runs the server at port 3000.For this project a json server is used and the data is stored inside the projects directory aa db.json file.
+Runs the server at port 3000.For this project a json server is used and the data is stored inside the projects directory as db.json file.

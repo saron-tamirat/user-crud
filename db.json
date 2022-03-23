@@ -1,0 +1,20 @@
+{
+  "User": [
+    {
+      "name": "Reda",
+      "lastName": "asmamaw",
+      "age": "55",
+      "height": "145",
+      "gender": "male",
+      "id": 1
+    },
+    {
+      "name": "zenash",
+      "lastName": "Aschalat",
+      "age": "55",
+      "height": "185",
+      "gender": "female",
+      "id": 3
+    }
+  ]
+}

@@ -4,8 +4,8 @@ import { Box, Flex, Button, Text } from "rebass";
 import { postRequest, getRequest } from "../redux/Useraction";
 import { connect } from "react-redux";
 import { useState } from "react";
-
-function UserPost({ post }) {
+// import Select from "react-select";
+function UserPost({ user, post }) {
   const userObj = {
     name: "",
     lastName: "",
@@ -21,6 +21,13 @@ function UserPost({ post }) {
 
     setFormValue({ ...formValue, [name]: value });
   };
+  let options = [
+    {
+      value: "male",
+      label: "male",
+    },
+    { value: "female", lable: "male" },
+  ];
 
   return (
     <>
@@ -38,6 +45,8 @@ function UserPost({ post }) {
         onSubmit={async (e) => {
           await post(e, formValue);
           setFormValue(userObj);
+          //window.location.reload();
+          //console.log(user)
         }}
       >
         <Text
@@ -94,18 +103,20 @@ function UserPost({ post }) {
             <Label sx={{ display: "inline-block" }} my={2} dcolor="">
               Gender
             </Label>
+
             <Select
               sx={{
                 borderColor: " #2bb6a3",
               }}
               id="gender"
+              value={gender}
               name="gender"
               onChange={(e) => {
                 console.log(e.target.value);
                 inputChange(e);
               }}
             >
-              <option value="male"></option>
+              <option value="">choose a gender</option>
               <option value="male">male</option>
               <option value="female">female</option>
             </Select>
@@ -163,7 +174,12 @@ function UserPost({ post }) {
     </>
   );
 }
-
+const mapStateToProps = (state) => {
+  //console.log("am at the mapstate");
+  return {
+    user: state,
+  };
+};
 const mapDispatchToProps = (dispatch) => {
   return {
     post: async (e, user) => {
@@ -181,4 +197,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(UserPost);
+export default connect(mapStateToProps, mapDispatchToProps)(UserPost);

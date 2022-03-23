@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Label, Input, Select } from "@rebass/forms";
+import { Label, Input, Select, option } from "@rebass/forms";
 import { Box, Flex, Button, Text } from "rebass";
 import { updateRequest, getRequest } from "../redux/Useraction";
 import { connect } from "react-redux";
@@ -25,6 +25,7 @@ function UserEdit({ user, update, fetchh }) {
   const navigate = useNavigate();
 
   useEffect(async () => {
+    console.log("am at the use effect");
     const oneUser = user.data.find((o) => o.id === id1);
     setFirstName(oneUser.name);
     setLastName(oneUser.lastName);
@@ -109,15 +110,21 @@ function UserEdit({ user, update, fetchh }) {
               }}
               id="gender"
               name="gender"
+              value={gender}
               onChange={(e) => {
+                console.log(e.target.value);
                 setGender(e.target.value);
               }}
             >
-              <option>{gender}</option>
+              <option value={gender}>{gender}</option>
               {gender == "female" ? (
-                <option value="male">Male</option>
+                <>
+                  <option>male</option>
+                </>
               ) : (
-                <option value="female">Female</option>
+                <>
+                  <option>female</option>
+                </>
               )}
             </Select>
           </Box>
@@ -172,7 +179,6 @@ function UserEdit({ user, update, fetchh }) {
               e.preventDefault();
 
               await update({ id1, userObj });
-              console.log(id1);
 
               await fetchh();
 

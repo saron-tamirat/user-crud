@@ -1,20 +1,36 @@
 {
   "User": [
     {
-      "name": "Reda",
-      "lastName": "asmamaw",
-      "age": "55",
-      "height": "145",
-      "gender": "male",
-      "id": 1
-    },
-    {
       "name": "zenash",
       "lastName": "Aschalat",
       "age": "55",
       "height": "185",
       "gender": "female",
       "id": 3
+    },
+    {
+      "name": "Azarya",
+      "lastName": "Tekase",
+      "age": "24",
+      "height": "181",
+      "gender": "male",
+      "id": 4
+    },
+    {
+      "name": "alemnesh",
+      "lastName": "eshete",
+      "age": "33",
+      "height": "178",
+      "gender": "female",
+      "id": 7
+    },
+    {
+      "name": "abraham",
+      "lastName": "alemayehu",
+      "age": "55",
+      "height": "156",
+      "gender": "female",
+      "id": 8
     }
   ]
 }

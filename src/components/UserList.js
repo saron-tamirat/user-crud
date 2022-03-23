@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Box, Flex, Button, Text, Image } from "rebass";
 function UserList(props) {
   useEffect(() => {
+    //console.log("am at the useeffect");
     props.fetchh();
   }, []);
   const navigate = useNavigate();
@@ -125,6 +126,7 @@ function UserList(props) {
 }
 
 const mapStateToProps = (state) => {
+  //console.log("am at the mapstate");
   return {
     user: state,
   };

@@ -4,6 +4,7 @@ import UserEdit from "./components/UserEdit";
 import UserPost from "./components/UserPost";
 import UserList from "./components/UserList";
 import NavBar from "./components/NavBar";
+import { Navigate } from "react-router-dom";
 
 import { Provider } from "react-redux";
 
@@ -17,7 +18,8 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<UserPost />} />
+          <Route path="/" element={<Navigate to="/User" replace={true} />} />
+
           <Route path="User" element={<UserList />} />
           <Route path="User/post" element={<UserPost />} />
           <Route path="User/:id" element={<UserEdit />} />

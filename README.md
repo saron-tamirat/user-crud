@@ -18,6 +18,6 @@ Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm start`
+### `npm run server`
 
 Runs the server at port 3000.For this project a json server is used and the data is stored inside the projects directory as db.json file.

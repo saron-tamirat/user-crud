@@ -52,10 +52,10 @@ const deleteSuccess = () => {
     type: DELETESUCCESS,
   };
 };
-const getOneRequest = ({ id1 }) => {
+const getOneRequest = (id1) => {
   return {
     type: GETONEUSERREQUEST,
-    PayLoad: { id1 },
+    PayLoad: id1,
   };
 };
 const getOneSuccess = (user) => {
@@ -65,6 +65,7 @@ const getOneSuccess = (user) => {
   };
 };
 const updateRequest = ({ id1, userObj }) => {
+  console.log(userObj);
   return {
     type: UPDATEREQUEST,
 

@@ -25,10 +25,10 @@ function* handleGetUser() {
     yield put(failure(err.message));
   }
 }
-function* handleOneGetUser({ PayLoad: { id1 } }) {
+function* handleOneGetUser({ PayLoad: id }) {
   try {
-    const user = yield call(oneFetcher, { id1 });
-
+    const user = yield call(oneFetcher, id);
+    console.log(user);
     yield put(getOneSuccess(user));
   } catch (err) {
     yield put(failure(err.message));

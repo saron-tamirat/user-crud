@@ -7,10 +7,12 @@ const fetcher = async () => {
     throw err;
   }
 };
-const oneFetcher = async ({ id1 }) => {
+const oneFetcher = async (id) => {
   try {
-    let response = await fetch(`http://localhost:3000/User/${id1}`);
+    let response = await fetch(`http://localhost:3000/User/${id}`);
+    //console, log(response);
     let responseJson = await response.json();
+    console.log(responseJson);
     return responseJson;
   } catch (err) {
     throw err;
@@ -18,6 +20,7 @@ const oneFetcher = async ({ id1 }) => {
 };
 const poster = async (data) => {
   try {
+    //console.log(data.json());
     let response = await fetch("http://localhost:3000/User/", {
       method: "POST",
       headers: {
@@ -51,7 +54,10 @@ const updater = async ({ id1, userObj }) => {
       },
       body: JSON.stringify(userObj),
     });
+    //console.log(response.json);
     let responseJson = await response.json();
+    // let r = JSON.parse(responseJson);
+    // console.log(r);
     console.log(responseJson);
     return responseJson;
   } catch (err) {

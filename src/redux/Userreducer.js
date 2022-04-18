@@ -16,6 +16,8 @@ const initialstate = {
   loading: false,
   data: [],
   error: "",
+  oneUser: {},
+  //id: "",
 };
 const reducer = (state = initialstate, action) => {
   switch (action.type) {
@@ -28,6 +30,7 @@ const reducer = (state = initialstate, action) => {
         ...state,
         loading: true,
       };
+
     case SUCCES:
       return {
         ...state,
@@ -45,6 +48,13 @@ const reducer = (state = initialstate, action) => {
       return {
         ...state,
         loading: false,
+      };
+    }
+    case GETONEUSERSUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        oneUser: action.PayLoad,
       };
     }
     case DELETESUCCESS: {

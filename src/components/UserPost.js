@@ -21,13 +21,6 @@ function UserPost({ user, post }) {
 
     setFormValue({ ...formValue, [name]: value });
   };
-  let options = [
-    {
-      value: "male",
-      label: "male",
-    },
-    { value: "female", lable: "male" },
-  ];
 
   return (
     <>
@@ -188,6 +181,7 @@ const mapDispatchToProps = (dispatch) => {
       const { name, lastName, age, height, gender } = user;
 
       if (name && lastName && age && height && gender) {
+        console.log(user);
         await dispatch(postRequest(user));
         dispatch(getRequest());
       } else {

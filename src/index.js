@@ -31,10 +31,10 @@ function App() {
 export default App;
 
 ReactDOM.render(
-  <PersistGate persistor={persistor}>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </PersistGate>,
+  //<PersistGate persistor={persistor}>
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  //</PersistGate>,
   document.getElementById("root")
 );
